@@ -2,11 +2,10 @@ function Color(r, g, b) {
     this.rgb = function () {
         return `rgb(${r},${g},${b})`
     }
-    this.toHex = function () {
+    Color.prototype.toHex = function () {
         let hexR = r.toString(16)
         let hexG = g.toString(16)
         let hexB = b.toString(16)
-        
         if (hexR.length == 1) {
             hexR = `0${hexR}`
         }
@@ -16,10 +15,9 @@ function Color(r, g, b) {
         if (hexB.length == 1) {
             hexB = `0${hexB}`
         }
-
         return `#${hexR}${hexG}${hexB}`
     }
-    this.rgba = function (a) {
+    Color.prototype.rgba = function (a) {
         return `rgb(${r},${g},${b},${a})`
     }
 }
